@@ -18,6 +18,6 @@ class Solution:
                 # this num & opr are not used for last index so we have added +0 at the end of the string in the start
             elif s[i].isspace():
                 continue
-        print(stack, num, opr)        
+    
         return sum(stack)
         
