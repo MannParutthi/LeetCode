@@ -1,8 +1,8 @@
 class Solution:
     def merge(self, count, arr, left, mid, right): #arrays are merged here to get the result in descending order - reverse sorted
         temp = [] # temp array which stores the merged list made out of two sorted list arr[left:mid] & arr[mid+1:right]
-        i = left  # i is pointer of arr[left:mid] - arr is sorted
-        j = mid+1 # j is pointer of arr[mid+1:right] - arr is sorted
+        i = left  # i is pointer of arr[left:mid] - arr is sorted as [10,8,6,4,2] reverse order
+        j = mid+1 # j is pointer of arr[mid+1:right] - arr is sorted as [9,7,5,3,1] reverse order
         
         while i<=mid and j<=right:
             if arr[i][0] <= arr[j][0]: # arr[x][0] = value & arr[x][1] = index 
