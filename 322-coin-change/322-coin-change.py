@@ -6,7 +6,7 @@ class Solution:
         for amt in range(1, len(dp)): # 1 to amount - both inclusive
             for coinVal in coins:
                 if coinVal <= amt:
-                    dp[amt] = min(dp[amt-coinVal]+1 , dp[amt])
+                    dp[amt] = min(dp[amt-coinVal]+1 , dp[amt]) # checking no of coins required to make amt - coinVal & +1 for self
                     
         if dp[amount] != float('inf'):
             return dp[amount]
