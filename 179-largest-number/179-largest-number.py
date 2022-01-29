@@ -12,7 +12,7 @@ class Solution:
         nums = [str(x) for x in nums]
         nums.sort(key = functools.cmp_to_key(self.comparator) , reverse=True)
         
-        if nums and nums[0] == '0':
+        if nums and nums[0] == '0': # for input ['0', '0']
             return '0'
         
         return ''.join(nums)
