@@ -12,7 +12,7 @@ class Solution:
         freqOfTargetStr = Counter(t)
         freqOfMatchSearchStr = defaultdict(int) # int => default value 0 & defaultdict => doesnt give KeyError if ele not found
         
-        # increment right ptr till match is found and after then increment left ptr till match is lost (remove char's and try to               shorten the window), once match is lost again start incrementing the right ptr  
+        # increment right ptr till match is found and after then increment left ptr till match is lost (remove char's and try to               shorten the window and still have match), once match is lost again start incrementing the right ptr  
         while right < len(s):
             freqOfMatchSearchStr[s[right]] += 1
             if s[right] in freqOfTargetStr:
@@ -21,7 +21,7 @@ class Solution:
             
             while left <= right and matchCount == len(t): # while current window contains perfect match
                 currWindowLen = right - left + 1
-                if currWindowLen < minWindowLen: # checking if current window length is less then replacing it with the result
+                if currWindowLen < minWindowLen: # checking if current window length is less then replace it with the result
                     minWindowLen = currWindowLen
                     minWindowStr = s[left : right+1]
             
