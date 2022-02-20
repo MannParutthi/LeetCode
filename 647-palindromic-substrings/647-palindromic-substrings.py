@@ -5,8 +5,8 @@ class Solution:
         # only top triangle will be used and bottom triangle of matrix will not be used as cant have start>end
         # matrix will store if substr from i (start) index to j (end) index is a palindrome or not 
         
-        count = 0
-        for gap in range(len(s)): # gap in between index i and j => a[i] to a[j]
+        count = 0 # traversing from diagonal of matrix (i==j) to top corner / upwards
+        for gap in range(len(s)): # gap in between index i and j => a[i] to a[j] 
             i = 0
             j = gap # gap 'n' means substr of len 'n+1'
             while j < len(s):
