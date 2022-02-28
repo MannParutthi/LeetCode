@@ -1,6 +1,6 @@
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
-        dp = [[False] * (len(s) + 1) for _ in range(len(p) + 1)] # empty string to full string
+        dp = [[False] * (len(s) + 1) for _ in range(len(p) + 1)] # empty string/pattern to full string/pattern
 
         for i in range(len(dp)): # i pointer for pattern
             for j in range(len(dp[0])): # j pointer for string
