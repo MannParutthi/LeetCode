@@ -29,3 +29,5 @@ class Solution:
         
         quotient = -quotient if isNegative else quotient
         return min(max(-2**31, quotient), 2**31-1)
+    
+    # if 10/3 => checking how many times 3 can be subtracted then how many times (3*2 = double) 6 can be subtracted ... 
