@@ -1,22 +1,49 @@
 class Solution: # same as 647. Palindromic Substrings
+    
     def longestPalindrome(self, s: str) -> str:
-        dp = [ [False] * len(s) for x in range(len(s)) ]
+        res = ""
+        resLen = 0
+        
+        for i in range(len(s)): # expanding from middle to left and right and checking for palindromes
+            # odd length
+            left = i
+            right = i
+            while left >= 0 and right < len(s) and s[left] == s[right]:
+                if right-left+1 > resLen:
+                    res = s[left : right+1]
+                    resLen = right - left + 1
+                left -= 1
+                right += 1
+                
+            # even length
+            left = i
+            right = i+1
+            while left >= 0 and right < len(s) and s[left] == s[right]:
+                if right-left+1 > resLen:
+                    res = s[left : right+1]
+                    resLen = right - left + 1
+                left -= 1
+                right += 1
+        return res
+    
+#     def longestPalindrome(self, s: str) -> str:
+#         dp = [ [False] * len(s) for x in range(len(s)) ]
 
-        maxLen = startIdx = 0
-        for i in range(len(s) - 1, -1, -1):
-            for j in range(i, len(s)):
-                if i == j:
-                    dp[i][j] = True
-                elif s[i] == s[j]:
-                    dp[i][j] = (i+1 == j) or dp[i + 1][j - 1]
+#         maxLen = startIdx = 0
+#         for i in range(len(s) - 1, -1, -1):
+#             for j in range(i, len(s)):
+#                 if i == j:
+#                     dp[i][j] = True
+#                 elif s[i] == s[j]:
+#                     dp[i][j] = (i+1 == j) or dp[i + 1][j - 1]
 
-                if dp[i][j]:
-                    newLen = j - i + 1
-                    if newLen > maxLen:
-                        maxLen = newLen
-                        startIdx = i
+#                 if dp[i][j]:
+#                     newLen = j - i + 1
+#                     if newLen > maxLen:
+#                         maxLen = newLen
+#                         startIdx = i
 
-        return s[startIdx:startIdx + maxLen]
+#         return s[startIdx:startIdx + maxLen]
     
 #     def longestPalindrome(self, s: str) -> str:
 #         dp = [ [False] * len(s) for x in range(len(s)) ] 
