@@ -6,7 +6,7 @@ class Solution:
         res = 0
         for i in range(1, len(s)):
             if s[i-1] != s[i]:
-                res += min(prevGroupCount, currGroupCount) # same no of 0's and 1's so we are taking min
+                res += min(prevGroupCount, currGroupCount) # it should have same no of 0's and 1's so we are taking min
                 prevGroupCount = currGroupCount
                 currGroupCount = 1
             else:
