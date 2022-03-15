@@ -8,8 +8,7 @@ class Solution:
             else:
                 letterLogs.append(log.split())
                 
-        letterLogs.sort(key = lambda x: x[0]) # sorted by identifiers
-        letterLogs.sort(key = lambda x: x[1:]) # sorted lexicographically by their contents
+        letterLogs.sort(key = lambda x: (x[1:], x[0])) # sorted lexicographically by their contents, if same => by identifiers
         for i in range(len(letterLogs)):
             letterLogs[i] = " ".join(letterLogs[i])
         
