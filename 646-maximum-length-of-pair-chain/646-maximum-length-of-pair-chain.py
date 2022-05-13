@@ -1,6 +1,5 @@
 class Solution:
     def findLongestChain(self, pairs: List[List[int]]) -> int:
-        
         pairs.sort(key=lambda x : x[1])
         
         dp = [1] * len(pairs) # it will store longest chain formed considering itself as the last pair 
