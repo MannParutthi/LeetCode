@@ -15,7 +15,7 @@ class Solution:
             if slow == fast:
                 break
         
-        if not (fast and fast.next):
+        if not (fast and fast.next): # not a cycle
             return None
         
         p1 = head
