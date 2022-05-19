@@ -13,7 +13,7 @@ class Solution:
                 if len(charStack) > 0 and charStack[-1] == '(': # valid combination found so pop
                     charStack.pop()
                     indexStack.pop()
-                    maxLen = max(maxLen, i - indexStack[-1])
+                    maxLen = max(maxLen, i - indexStack[-1]) # indexStack[-1] => will have index till where its invalid
                 else:
                     indexStack.append(i) # at i - parentheses is invalid 
                     
